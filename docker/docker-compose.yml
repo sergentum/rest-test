@@ -4,7 +4,7 @@ version: '3.1'
 services:
 
   test-app:
-    image: registry.gitlab.com/sergentum-aws/test
+    image: sergentum/rest-test
     ports:
       - 8765:8080
 
