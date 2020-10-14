@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  test-app:
+    image: registry.gitlab.com/sergentum-aws/test
+    ports:
+      - 8765:8080
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
